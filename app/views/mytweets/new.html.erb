@@ -1,2 +1,7 @@
-<h1>Mytweets#new,</h1>
-<p>Find me in app/views/mytweets/new,.html.erb</p>
+<%= form_with(model: Mytweet.new, local: true) do |form| %>
+  <div class="mytweet_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>

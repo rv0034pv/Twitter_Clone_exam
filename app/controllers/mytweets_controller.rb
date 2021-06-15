@@ -1,5 +1,6 @@
 class MytweetsController < ApplicationController
   def new
+    
   end
 
   def edit
