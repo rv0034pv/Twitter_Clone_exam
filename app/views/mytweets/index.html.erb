@@ -13,6 +13,9 @@
   <tr>
     <td><%= link_to "tweetを編集する", edit_mytweet_path(mytweet.id) %></td>
   </tr>
+  <tr>
+    <td><%= link_to 'tweetを削除する', mytweet_path(mytweet.id), method: :delete %></td>
+  </tr>
 <% end %>
 </table>
 <%= link_to '新しくtweetする', new_mytweet_path %>
