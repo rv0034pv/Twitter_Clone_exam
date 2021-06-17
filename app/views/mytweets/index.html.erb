@@ -1,4 +1,5 @@
 <h1>Mytweet一覧</h1>
+<p><%= notice %></p>
 <table>
   <tr>
     <th>内容</th>
@@ -11,10 +12,10 @@
     <td><%= link_to '詳細を確認する', mytweet_path(mytweet.id) %></td>
   </tr>
   <tr>
-    <td><%= link_to "tweetを編集する", edit_mytweet_path(mytweet.id) %></td>
+  <td><%= link_to "tweetを編集する", edit_mytweet_path(mytweet.id), data: { confirm: '本当に編集していいですか？' } %></td>
   </tr>
   <tr>
-    <td><%= link_to 'tweetを削除する', mytweet_path(mytweet.id), method: :delete %></td>
+  <td><%= link_to 'tweetを削除する', mytweet_path(mytweet.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
