@@ -1,2 +1,17 @@
-<h1>Mytweets#edit,show,</h1>
-<p>Find me in app/views/mytweets/edit,show,.html.erb</p>
+<%= form_with(model: @mytweet, local: true) do |form| %>
+<% if @mytweet.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= @mytweet.errors.count %>件のエラーがあります。</h2>
+     <ul>
+     <% @mytweet.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
+  <div class="mytweet_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>

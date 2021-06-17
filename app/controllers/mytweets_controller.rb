@@ -15,6 +15,17 @@ class MytweetsController < ApplicationController
   end
 
   def edit
+    @mytweet = Mytweet.find(params[:id])
+  end
+
+  def update
+    @mytweet = Mytweet.find(params[:id])
+    if @mytweet.update(mytweet_params)
+      redirect_to mytweets_path, notice: "ブログを編集しました！"
+    else
+      render :edit
+    end
+
   end
 
   def index

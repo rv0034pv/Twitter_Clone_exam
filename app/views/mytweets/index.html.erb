@@ -10,6 +10,9 @@
   <tr>
     <td><%= link_to '詳細を確認する', mytweet_path(mytweet.id) %></td>
   </tr>
+  <tr>
+    <td><%= link_to "tweetを編集する", edit_mytweet_path(mytweet.id) %></td>
+  </tr>
 <% end %>
 </table>
 <%= link_to '新しくtweetする', new_mytweet_path %>
