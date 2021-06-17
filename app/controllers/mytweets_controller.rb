@@ -7,12 +7,14 @@ class MytweetsController < ApplicationController
   def create
     @mytweet = Mytweet.create(mytweet_params)
     if @mytweet.save
-      # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
       redirect_to mytweets_path, notice: "ツイートに成功しました！"
     else
-      # 入力フォームを再描画します。
       render :new
     end
+  end
+
+  def confirm
+    @mytweet = Mytweet.new(mytweet_params)
   end
 
   def edit
