@@ -1,7 +1,7 @@
 <h3>以下の内容で、tweetする。</h3>
-<%= form_with(model: @mytweet, local: true) do |form| %>
+<%= form_with(model: @post, local: true) do |form| %>
   <%= form.hidden_field :content %>
-  <p>tweet内容:<%= @mytweet.content %></p>
+  <p>tweet内容:<%= @post.content %></p>
   <%= form.submit  "tweet!" %>
   <%= form.submit "戻る", name: 'back' %>
 <% end %>
