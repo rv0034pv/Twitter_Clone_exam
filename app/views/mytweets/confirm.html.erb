@@ -3,5 +3,5 @@
   <%= form.hidden_field :content %>
   <p>tweet内容:<%= @mytweet.content %></p>
   <%= form.submit  "tweet!" %>
+  <%= form.submit "戻る", name: 'back' %>
 <% end %>
-<%= link_to '戻る', :back %>

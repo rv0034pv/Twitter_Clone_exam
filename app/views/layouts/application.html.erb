@@ -11,14 +11,23 @@
 
   <body>
     <header>
-      <div><%= link_to 'Mytweets', mytweets_path %></div>
+      <div>
+       <ul class="top_menu clearfix">
+          <li>
+            <%= link_to 'All Mytwees', mytweets_path %>
+          </li>
+          <li>
+            <%= link_to '新規tweet', new_mytweet_path %>
+          </li>
+       </ul>
+      </div>
     </header>
     <div class="wrapper">
       <div class="container">
        <%= yield %>
       </div>
     <footer>
-    <small>Mytweet app</small>
+    <p>Mytweet app</p>
     </footer>
   </div
   </body>

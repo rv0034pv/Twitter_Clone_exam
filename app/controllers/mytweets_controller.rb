@@ -5,16 +5,21 @@ class MytweetsController < ApplicationController
   end
 
   def create
-    @mytweet = Mytweet.create(mytweet_params)
-    if @mytweet.save
-      redirect_to mytweets_path, notice: "ツイートに成功しました！"
-    else
+    @mytweet = Mytweet.new(mytweet_params)
+    if params[:back]
       render :new
-    end
+    else
+     if @mytweet.save
+       redirect_to mytweets_path, notice: "ツイートに成功しました！"
+     else
+       render :new
+     end
+   end
   end
 
   def confirm
     @mytweet = Mytweet.new(mytweet_params)
+    render :new if @mytweet.invalid?
   end
 
   def edit
@@ -41,6 +46,9 @@ class MytweetsController < ApplicationController
 
   def show
   @mytweet = Mytweet.find(params[:id])
+  end
+
+  def top
   end
 
   private
